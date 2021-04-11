@@ -27,3 +27,5 @@ Using the plugin:
 - move the RPDB plugin to the top of the "Movie Image Fetchers" list
 - click the "..." for the same library again
 - select "Refresh Metadata"
+
+![emby-1](https://user-images.githubusercontent.com/1777923/114302550-3d77c080-9ad2-11eb-9699-fd4a5b6adfaf.jpg)
