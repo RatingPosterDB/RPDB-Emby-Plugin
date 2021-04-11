@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.0;</TargetFrameworks>
+		<AssemblyVersion>1.0.0.0</AssemblyVersion>
+		<FileVersion>1.0.0.0</FileVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Remove="Configuration\rpdb.html" />
+		<None Remove="Configuration\rpdb.js" />
+		<None Remove="strings\en-GB.json" />
+		<None Remove="strings\en-US.json" />
+		<None Remove="thumb.png" />
+    </ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="Configuration\rpdb.html" />
+		<EmbeddedResource Include="Configuration\rpdb.js" />
+		<EmbeddedResource Include="strings\en-GB.json" />
+		<EmbeddedResource Include="strings\en-US.json" />
+		<EmbeddedResource Include="thumb.png" />
+    </ItemGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="mediabrowser.server.core" Version="4.5.0.28" />
+	</ItemGroup>
+
+</Project>

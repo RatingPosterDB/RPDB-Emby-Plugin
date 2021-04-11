@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPDB", "RPDB\RPDB.csproj", "{2B929424-D341-409A-834F-80A2FF45C820}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B929424-D341-409A-834F-80A2FF45C820}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B929424-D341-409A-834F-80A2FF45C820}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B929424-D341-409A-834F-80A2FF45C820}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B929424-D341-409A-834F-80A2FF45C820}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0F503B48-63D1-4DC7-ABF0-0E09F4B5DC4B}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,38 @@
+<div id="rpdbConfigurationPage" data-role="page" class="page type-interior pluginConfigurationPage fullWidthContent" data-controller="__plugin/rpdbjs">
+
+    <div class="content-primary padded-top">
+
+        <form>
+            <div class="inputContainer">
+                <input is="emby-input" type="text" id="txtRpdbApiKey" label="${LabelRpdbApiKey}" />
+                <div class="fieldDescription">${LabelRpdbApiKeyHelp}</div>
+                <div class="fieldDescription"><a is="emby-linkbutton" class="button-link" href="https://ratingposterdb.com/" target="_blank">${LearnMore}</a></div>
+            </div>
+            <div class="selectContainer">
+                <label for="posterType">${LabelPosterType}</label>
+                <select is="emby-select" id="posterType">
+                    <option value="poster-default">Ratings</option>
+                    <option value="poster-certs">Ratings + Certification</option>
+                    <option value="poster-rt">IMDB + RT + RT Audience</option>
+                    <option value="poster-mc">IMDB + MC + MC Audience</option>
+                </select>
+            </div>
+            <div>
+                <label class="checkboxContainer">
+                    <input is="emby-checkbox" type="checkbox" id="textless" />
+                    <span>${LabelTextless}</span>
+                </label>
+            </div>
+            <div>
+                <label class="checkboxContainer">
+                    <input is="emby-checkbox" type="checkbox" id="backdrops" />
+                    <span>${LabelBackdrops}</span>
+                </label>
+            </div>
+
+            <div>
+                <button is="emby-button" type="submit" class="raised button-submit block"><span>${Save}</span></button>
+            </div>
+        </form>
+    </div>
+</div>
