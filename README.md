@@ -2,6 +2,7 @@
 
 Emby Plugin for [Rating Poster Database](https://ratingposterdb.com/).
 
+
 [See Screenshots](https://ratingposterdb.com/#emby)
 
 Currently supports:
@@ -9,13 +10,17 @@ Currently supports:
 - Textless posters (Tier 3+)
 - Backdrops (Tier 3+)
 
+
 To install manually on Emby Server for Windows:
+
 - [download the plugin](https://github.com/jaruba/RPDB-Emby-Plugin/releases/download/v1.0.0/RPDB-Emby-Plugin.zip)
 - unpack it
 - copy the files from the "RPDB-Emby-Plugin" folder to `%AppData%\Emby-Server\programdata\plugins`
 - restart Emby Server
 
-Using the plugin:
+
+Setting up the plugin:
+
 - go to Settings > Advanced > Plugins
 - click the RPDB plugin to set it up
 - click "Save" to save settings
@@ -27,5 +32,6 @@ Using the plugin:
 - move the RPDB plugin to the top of the "Movie Image Fetchers" list
 - click the "..." for the same library again
 - select "Refresh Metadata"
+
 
 ![emby-1](https://user-images.githubusercontent.com/1777923/114302550-3d77c080-9ad2-11eb-9699-fd4a5b6adfaf.jpg)
