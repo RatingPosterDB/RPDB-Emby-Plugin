@@ -11,11 +11,11 @@ Currently supports:
 - Backdrops (Tier 3+)
 
 
-To install manually on Emby Server for Windows:
+To install manually on Emby Server:
 
 - [download the plugin](https://github.com/jaruba/RPDB-Emby-Plugin/releases/download/v1.0.0/RPDB-Emby-Plugin.zip)
 - unpack it
-- copy the files from the "RPDB-Emby-Plugin" folder to `%AppData%\Emby-Server\programdata\plugins`
+- copy the files from the "RPDB-Emby-Plugin" folder to Emby's "plugins" folder
 - restart Emby Server
 
 
