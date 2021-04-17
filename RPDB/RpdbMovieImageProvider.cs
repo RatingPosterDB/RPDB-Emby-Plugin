@@ -23,6 +23,7 @@ using MediaBrowser.Controller.IO;
 using MediaBrowser.Model.IO;
 using MediaBrowser.Controller.LiveTv;
 using MediaBrowser.Model.Extensions;
+using System.Net.Http;
 
 namespace RPDB
 {
@@ -168,13 +169,23 @@ namespace RPDB
             get { return 1; }
         }
 
-        public Task<HttpResponseInfo> GetImageResponse(string url, CancellationToken cancellationToken)
+        public async Task<HttpResponseInfo> GetImageResponse(string url, CancellationToken cancellationToken)
         {
-            return _httpClient.GetResponse(new HttpRequestOptions
+
+            var options = new HttpRequestOptions
             {
+                Url = url,
                 CancellationToken = cancellationToken,
-                Url = url
-            });
+                EnableDefaultUserAgent = true,
+                TimeoutMs = 30000
+            };
+
+            var response = await _httpClient.GetResponse(options).ConfigureAwait(false);
+
+            if (response.StatusCode != HttpStatusCode.OK)
+                throw new HttpRequestException($"Bad Status Code: {response.StatusCode}");
+
+            return response;
         }
     }
 }

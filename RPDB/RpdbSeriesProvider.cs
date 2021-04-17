@@ -1,7 +1,3 @@
-using MediaBrowser.Common.Configuration;
-using MediaBrowser.Common.Net;
-using MediaBrowser.Controller.Configuration;
-using MediaBrowser.Controller.Entities;
 using MediaBrowser.Controller.Entities.TV;
 using MediaBrowser.Controller.Providers;
 using MediaBrowser.Model.Configuration;
@@ -23,6 +19,7 @@ using System.Threading.Tasks;
 using MediaBrowser.Controller.IO;
 using MediaBrowser.Model.IO;
 using MediaBrowser.Model.Extensions;
+using System.Net.Http;
 
 namespace RPDB
 {
@@ -122,7 +119,7 @@ namespace RPDB
 
             if (reqType.Equals("backdrop"))
             {
-                var backdrops = RpdbSeriesProvider.Current.GetRpdbOptions().Backdrops;
+                var backdrops = GetRpdbOptions().Backdrops;
                 if (backdrops.Equals("1"))
                 {
                     if (clientKey.StartsWith("t1-") || clientKey.StartsWith("t2-"))
@@ -138,8 +135,8 @@ namespace RPDB
             }
             else if (reqType.Equals("poster"))
             {
-                posterType = RpdbSeriesProvider.Current.GetRpdbOptions().PosterType;
-                var textless = RpdbSeriesProvider.Current.GetRpdbOptions().Textless;
+                posterType = GetRpdbOptions().PosterType;
+                var textless = GetRpdbOptions().Textless;
                 if (textless.Equals("1"))
                 {
                     if (clientKey.StartsWith("t1-") || clientKey.StartsWith("t2-"))
@@ -172,13 +169,23 @@ namespace RPDB
             get { return 1; }
         }
 
-        public Task<HttpResponseInfo> GetImageResponse(string url, CancellationToken cancellationToken)
+        public async Task<HttpResponseInfo> GetImageResponse(string url, CancellationToken cancellationToken)
         {
-            return _httpClient.GetResponse(new HttpRequestOptions
+
+            var options = new HttpRequestOptions
             {
+                Url = url,
                 CancellationToken = cancellationToken,
-                Url = url
-            });
+                EnableDefaultUserAgent = true,
+                TimeoutMs = 30000
+            };
+
+            var response = await _httpClient.GetResponse(options).ConfigureAwait(false);
+
+            if (response.StatusCode != HttpStatusCode.OK)
+                throw new HttpRequestException($"Bad Status Code: {response.StatusCode}");
+
+            return response;
         }
 
         public RpdbOptions GetRpdbOptions()
