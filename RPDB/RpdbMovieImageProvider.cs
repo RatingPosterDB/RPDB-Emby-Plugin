@@ -20,7 +20,7 @@ namespace RPDB
         private readonly CultureInfo _usCulture = new CultureInfo("en-US");
         private readonly IHttpClient _httpClient;
 
-        private const string RpdbBaseUrl = "http://api.ratingposterdb.com/{0}/{1}/{2}/{3}.jpg";
+        private const string RpdbBaseUrl = "http://api.ratingposterdb.com/{0}/{1}/{2}/{3}.jpg{4}";
 
         internal static RpdbMovieImageProvider Current;
 
@@ -105,6 +105,7 @@ namespace RPDB
             }
 
             var posterType = "poster-default";
+            var fallback = "";
 
             if (reqType.Equals("backdrop"))
             {
@@ -125,6 +126,7 @@ namespace RPDB
             else if (reqType.Equals("poster"))
             {
                 posterType = RpdbSeriesProvider.Current.GetRpdbOptions().PosterType;
+                fallback = "?fallback=true";
                 var textless = RpdbSeriesProvider.Current.GetRpdbOptions().Textless;
                 if (textless.Equals("1"))
                 {
@@ -139,7 +141,7 @@ namespace RPDB
                 }
             }
 
-            var url = string.Format(RpdbBaseUrl, clientKey, idType, posterType, movieId);
+            var url = string.Format(RpdbBaseUrl, clientKey, idType, posterType, movieId, fallback);
 
             list.Add(new RemoteImageInfo
                     {
