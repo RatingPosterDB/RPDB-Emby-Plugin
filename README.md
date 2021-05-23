@@ -7,7 +7,7 @@ Emby Plugin for [Rating Poster Database](https://ratingposterdb.com/).
 
 Currently supports:
 - Choosing poster type (Tier 1+): 4 available options
-- Textless posters (Tier 3+)
+- Textless posters (Tier 1+)
 - Backdrops (Tier 3+)
 
 

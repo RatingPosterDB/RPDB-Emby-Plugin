@@ -130,14 +130,7 @@ namespace RPDB
                 var textless = RpdbSeriesProvider.Current.GetRpdbOptions().Textless;
                 if (textless.Equals("1"))
                 {
-                    if (clientKey.StartsWith("t1-") || clientKey.StartsWith("t2-"))
-                    {
-                        return;
-                    }
-                    else
-                    {
-                        posterType = posterType.Replace("poster-", "textless-");
-                    }
+                    posterType = posterType.Replace("poster-", "textless-");
                 }
             }
 
