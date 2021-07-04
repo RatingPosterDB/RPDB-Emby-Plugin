@@ -11,6 +11,8 @@ define(['loading', 'emby-input', 'emby-select', 'emby-checkbox', 'emby-button'],
 
         page.querySelector('#backdrops').checked = !!(config.Backdrops === '1')
 
+        page.querySelector('#posterLang').value = config.PosterLang || 'en';
+
         loading.hide();
     }
 
@@ -31,6 +33,8 @@ define(['loading', 'emby-input', 'emby-select', 'emby-checkbox', 'emby-button'],
             config.Textless = form.querySelector('#textless:checked') !== null ? '1' : '0'
 
             config.Backdrops = form.querySelector('#backdrops:checked') !== null ? '1' : '0'
+
+            page.querySelector('#posterLang').value = config.PosterLang || 'en';
 
             ApiClient.updateNamedConfiguration("rpdb", config).then(Dashboard.processServerConfigurationUpdateResult);
         });

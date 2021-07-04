@@ -106,6 +106,7 @@ namespace RPDB
 
             var posterType = "poster-default";
             var fallback = "";
+            var posterLang = RpdbSeriesProvider.Current.GetRpdbOptions().PosterLang;
 
             if (reqType.Equals("backdrop"))
             {
@@ -127,6 +128,11 @@ namespace RPDB
             {
                 posterType = RpdbSeriesProvider.Current.GetRpdbOptions().PosterType;
                 fallback = "?fallback=true";
+                if (!posterLang.Equals("en"))
+                {
+                    fallback += "&lang=";
+                    fallback += posterLang;
+                }
                 var textless = RpdbSeriesProvider.Current.GetRpdbOptions().Textless;
                 if (textless.Equals("1"))
                 {

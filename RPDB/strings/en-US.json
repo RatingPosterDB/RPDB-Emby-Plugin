@@ -3,5 +3,6 @@
   "LabelRpdbApiKeyHelp": "The RPDB plugin requires an API Key to work, you can get one from ratingposterdb.com",
   "LabelPosterType": "Poster Type (Tier 1 supports only 'Ratings')",
   "LabelTextless": "Textless Posters",
-  "LabelBackdrops": "Backdrops (Tier 3 needed)"
+  "LabelBackdrops": "Backdrops (Tier 3 needed)",
+  "LabelPosterLanguage": "Poster Language (Tier 2 needed)"
 }
