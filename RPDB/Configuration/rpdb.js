@@ -34,7 +34,7 @@ define(['loading', 'emby-input', 'emby-select', 'emby-checkbox', 'emby-button'],
 
             config.Backdrops = form.querySelector('#backdrops:checked') !== null ? '1' : '0'
 
-            page.querySelector('#posterLang').value = config.PosterLang || 'en';
+            config.PosterLang = form.querySelector('#posterLang').value;
 
             ApiClient.updateNamedConfiguration("rpdb", config).then(Dashboard.processServerConfigurationUpdateResult);
         });
