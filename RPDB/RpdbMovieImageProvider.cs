@@ -21,6 +21,7 @@ namespace RPDB
         private readonly IHttpClient _httpClient;
 
         private const string RpdbBaseUrl = "http://api.ratingposterdb.com/{0}/{1}/{2}/{3}.jpg{4}";
+        private const string BaseTmdbId = "movie-{0}";
 
         internal static RpdbMovieImageProvider Current;
 
@@ -66,7 +67,7 @@ namespace RPDB
             if (string.IsNullOrEmpty(movieId))
             {
                 idType = "tmdb";
-                movieId = baseItem.GetProviderId(MetadataProviders.Tmdb);
+                movieId = string.Format(BaseTmdbId, baseItem.GetProviderId(MetadataProviders.Tmdb));
             }
 
             if (!string.IsNullOrEmpty(movieId))

@@ -24,6 +24,7 @@ namespace RPDB
         private readonly IHttpClient _httpClient;
 
         private const string RpdbBaseUrl = "http://api.ratingposterdb.com/{0}/{1}/{2}/{3}.jpg{4}";
+        private const string BaseTmdbId = "series-{0}";
 
         internal static RpdbSeriesProvider Current { get; private set; }
 
@@ -67,6 +68,12 @@ namespace RPDB
 
             var idType = "imdb";
             var seriesId = series.GetProviderId(MetadataProviders.Imdb);
+
+            if (string.IsNullOrEmpty(movieId))
+            {
+                idType = "tmdb";
+                seriesId = string.Format(BaseTmdbId, series.GetProviderId(MetadataProviders.Tmdb));
+            }
 
             if (string.IsNullOrEmpty(seriesId))
             {
