@@ -69,7 +69,7 @@ namespace RPDB
             var idType = "imdb";
             var seriesId = series.GetProviderId(MetadataProviders.Imdb);
 
-            if (string.IsNullOrEmpty(movieId))
+            if (string.IsNullOrEmpty(seriesId))
             {
                 idType = "tmdb";
                 seriesId = string.Format(BaseTmdbId, series.GetProviderId(MetadataProviders.Tmdb));
