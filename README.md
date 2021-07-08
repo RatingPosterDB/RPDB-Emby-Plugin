@@ -14,7 +14,7 @@ Currently supports:
 
 To install manually on Emby Server:
 
-- [download the plugin](https://github.com/RatingPosterDB/RPDB-Emby-Plugin/releases/download/v1.0.3/RPDB-Emby-Plugin.zip)
+- [download the plugin](https://github.com/RatingPosterDB/RPDB-Emby-Plugin/releases/download/v1.0.4/RPDB-Emby-Plugin.zip)
 - unpack it
 - copy the files from the "RPDB-Emby-Plugin" folder to Emby's "plugins" folder
 - restart Emby Server
