@@ -1,8 +1,18 @@
 {
+  "LabelRpdbDescription": "Rating Poster Database is a service that adds posters with ratings (IMDB, Rotten Tomatoes, Metacritic, etc) to Emby libraries, it supports many rating types, textless posters, posters translated in many languages, adding badges (4k, HDR, DoVi, etc) and more.",
   "LabelRpdbApiKey": "RPDB API Key: (required)",
   "LabelRpdbApiKeyHelp": "The RPDB plugin requires an API Key to work, you can get one from ratingposterdb.com",
-  "LabelPosterType": "Poster Type (Tier 1 supports only 'Ratings')",
-  "LabelTextless": "Textless Posters",
-  "LabelBackdrops": "Backdrops (Tier 3 needed)",
-  "LabelPosterLanguage": "Poster Language (Tier 2 needed)"
+  "LabelInvalidApiKey": "This RPDB API Key is not valid",
+  "LabelPosterType": "Poster Type (Tier 1+)",
+  "LabelTextless": "Textless Posters (Tier 1+)",
+  "LabelBackdrops": "Backdrops (Tier 2+)",
+  "LabelPosterLanguage": "Poster Language (Tier 2+)",
+  "LabelGetApiKey": "Get API Key",
+  "LabelLoadKey": "Load Key",
+  "LabelFirstRating": "1st Rating",
+  "LabelSecondRating": "2nd Rating",
+  "LabelThirdRating": "3nd Rating",
+  "LabelFirstBackupRating": "1st Backup Rating",
+  "LabelSecondBackupRating": "2nd Backup Rating",
+  "LabelChangeApiKey": "Change API Key"
 }

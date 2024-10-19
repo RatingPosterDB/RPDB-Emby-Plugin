@@ -136,10 +136,43 @@ namespace RPDB
                     fallback += "&lang=";
                     fallback += posterLang;
                 }
-                var textless = RpdbSeriesProvider.Current.GetRpdbOptions().Textless;
-                if (textless.Equals("1") && !clientKey.StartsWith("t0-"))
+                if (posterType.Equals("rating-order") && !clientKey.StartsWith("t0-") && !clientKey.StartsWith("t1-") && !clientKey.StartsWith("t2-"))
                 {
-                    posterType = posterType.Replace("poster-", "textless-");
+                    fallback += "&order=";
+                    var firstRating = RpdbSeriesProvider.Current.GetRpdbOptions().FirstRating; 
+                    fallback += firstRating;
+                    var secondRating = RpdbSeriesProvider.Current.GetRpdbOptions().SecondRating; 
+                    if (!secondRating.Equals("none"))
+                    {
+                        fallback += "%2C";
+                        fallback += secondRating;
+                    }
+                    var thirdRating = RpdbSeriesProvider.Current.GetRpdbOptions().ThirdRating; 
+                    if (!thirdRating.Equals("none"))
+                    {
+                        fallback += "%2C";
+                        fallback += thirdRating;
+                    }
+                    var firstBackupRating = RpdbSeriesProvider.Current.GetRpdbOptions().FirstBackupRating; 
+                    if (!firstBackupRating.Equals("none"))
+                    {
+                        fallback += "%2C";
+                        fallback += firstBackupRating;
+                    }
+                    var secondBackupRating = RpdbSeriesProvider.Current.GetRpdbOptions().SecondBackupRating;             
+                    if (!secondBackupRating.Equals("none"))
+                    {
+                        fallback += "%2C";
+                        fallback += secondBackupRating;
+                    }
+                }
+                else
+                {
+                    var textless = RpdbSeriesProvider.Current.GetRpdbOptions().Textless;
+                    if (textless.Equals("1") && !clientKey.StartsWith("t0-"))
+                    {
+                        posterType = posterType.Replace("poster-", "textless-");
+                    }
                 }
             }
 

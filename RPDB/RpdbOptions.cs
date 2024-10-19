@@ -11,5 +11,10 @@ namespace RPDB
         public string PosterLang { get; set; }
         public string Textless { get; set; }
         public string Backdrops { get; set; }
+        public string FirstRating { get; set; }
+        public string SecondRating { get; set; }
+        public string ThirdRating { get; set; }
+        public string FirstBackupRating { get; set; }
+        public string SecondBackupRating { get; set; }
     }
 }
