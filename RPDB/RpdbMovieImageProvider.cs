@@ -114,7 +114,7 @@ namespace RPDB
                 var backdrops = RpdbSeriesProvider.Current.GetRpdbOptions().Backdrops;
                 if (backdrops.Equals("1"))
                 {
-                    if (clientKey.StartsWith("t1-") || clientKey.StartsWith("t2-"))
+                    if (clientKey.StartsWith("t0-") || clientKey.StartsWith("t1-"))
                     {
                         return;
                     }
@@ -127,15 +127,17 @@ namespace RPDB
             }
             else if (reqType.Equals("poster"))
             {
-                posterType = RpdbSeriesProvider.Current.GetRpdbOptions().PosterType;
                 fallback = "?fallback=true";
-                if (!posterLang.Equals("en"))
+                if (!clientKey.StartsWith("t0-")) {
+                    posterType = RpdbSeriesProvider.Current.GetRpdbOptions().PosterType;
+                }
+                if (!posterLang.Equals("en") && !clientKey.StartsWith("t0-") && !clientKey.StartsWith("t1-"))
                 {
                     fallback += "&lang=";
                     fallback += posterLang;
                 }
                 var textless = RpdbSeriesProvider.Current.GetRpdbOptions().Textless;
-                if (textless.Equals("1"))
+                if (textless.Equals("1") && !clientKey.StartsWith("t0-"))
                 {
                     posterType = posterType.Replace("poster-", "textless-");
                 }
