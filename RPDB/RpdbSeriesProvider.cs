@@ -138,8 +138,10 @@ namespace RPDB
             }
             else if (reqType.Equals("poster"))
             {
-                posterType = GetRpdbOptions().PosterType;
                 fallback = "?fallback=true";
+                if (!clientKey.StartsWith("t0-")) {
+                    posterType = GetRpdbOptions().PosterType;
+                }
                 if (!posterLang.Equals("en") && !clientKey.StartsWith("t0-") && !clientKey.StartsWith("t1-"))
                 {
                     fallback += "&lang=";
