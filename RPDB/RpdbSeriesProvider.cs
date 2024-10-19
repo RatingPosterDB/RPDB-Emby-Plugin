@@ -125,7 +125,7 @@ namespace RPDB
                 var backdrops = GetRpdbOptions().Backdrops;
                 if (backdrops.Equals("1"))
                 {
-                    if (clientKey.StartsWith("t1-") || clientKey.StartsWith("t2-"))
+                    if (clientKey.StartsWith("t0-") || clientKey.StartsWith("t1-"))
                     {
                         return;
                     }
