@@ -14,5 +14,8 @@
   "LabelThirdRating": "3nd Rating",
   "LabelFirstBackupRating": "1st Backup Rating",
   "LabelSecondBackupRating": "2nd Backup Rating",
-  "LabelChangeApiKey": "Change API Key"
+  "LabelChangeApiKey": "Change API Key",
+  "LabelVideoQuality": "Video Quality Badge (4K, 1080p, etc) (Tier 3+)",
+  "LabelColorRange": "Color Range Badge (HDR / Dolby Vision) (Tier 3+)",
+  "LabelAudioChannels": "Audio Channels Badge (2.0 / 5.1 / 7.1) (Tier 3+)"
 }

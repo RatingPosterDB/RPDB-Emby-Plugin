@@ -16,5 +16,8 @@ namespace RPDB
         public string ThirdRating { get; set; }
         public string FirstBackupRating { get; set; }
         public string SecondBackupRating { get; set; }
+        public string VideoQuality { get; set; }
+        public string ColorRange { get; set; }
+        public string AudioChannels { get; set; }
     }
 }

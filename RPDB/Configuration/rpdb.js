@@ -45,12 +45,16 @@ define(['loading', 'emby-input', 'emby-select', 'emby-checkbox', 'emby-button'],
 
         }
 
+        page.querySelector('#videoQuality').checked = !!(config.VideoQuality === '1')
+        page.querySelector('#colorRange').checked = !!(config.ColorRange === '1')
+        page.querySelector('#audioChannels').checked = !!(config.AudioChannels === '1')
+
         loading.hide();
 
         cb();
     }
 
-    function onSubmit(e) {
+    function onSubmit(e, page) {
 
         e.preventDefault();
 
@@ -65,19 +69,23 @@ define(['loading', 'emby-input', 'emby-select', 'emby-checkbox', 'emby-button'],
 
             config.UserApiKey = globalKey;
 
-            config.PosterType = form.querySelector('#posterType').value;
+            config.PosterType = page.querySelector('#posterType').value;
 
-            config.Textless = form.querySelector('#textless:checked') !== null ? '1' : '0'
+            config.Textless = page.querySelector('#textless:checked') !== null ? '1' : '0'
 
-            config.Backdrops = form.querySelector('#backdrops:checked') !== null ? '1' : '0'
+            config.Backdrops = page.querySelector('#backdrops:checked') !== null ? '1' : '0'
 
-            config.PosterLang = form.querySelector('#posterLang').value;
+            config.PosterLang = page.querySelector('#posterLang').value;
 
-            config.FirstRating = form.querySelector('#firstRating').value;
-            config.SecondRating = form.querySelector('#secondRating').value;
-            config.ThirdRating = form.querySelector('#thirdRating').value;
-            config.FirstBackupRating = form.querySelector('#firstBackupRating').value;
-            config.SecondBackupRating = form.querySelector('#secondBackupRating').value;
+            config.FirstRating = page.querySelector('#firstRating').value;
+            config.SecondRating = page.querySelector('#secondRating').value;
+            config.ThirdRating = page.querySelector('#thirdRating').value;
+            config.FirstBackupRating = page.querySelector('#firstBackupRating').value;
+            config.SecondBackupRating = page.querySelector('#secondBackupRating').value;
+
+            config.VideoQuality = page.querySelector('#videoQuality:checked') !== null ? '1' : '0'
+            config.ColorRange = page.querySelector('#colorRange:checked') !== null ? '1' : '0'
+            config.AudioChannels = page.querySelector('#audioChannels:checked') !== null ? '1' : '0'
 
             ApiClient.updateNamedConfiguration("rpdb", config).then(Dashboard.processServerConfigurationUpdateResult);
         });
@@ -101,16 +109,33 @@ define(['loading', 'emby-input', 'emby-select', 'emby-checkbox', 'emby-button'],
                         page.querySelector('#textless').disabled = true
                         page.querySelector('#backdrops').disabled = true
                         page.querySelector('#posterLang').disabled = true
+                        page.querySelector('#videoQuality').disabled = true
+                        page.querySelector('#colorRange').disabled = true
+                        page.querySelector('#audioChannels').disabled = true
                     } else if (globalKey.startsWith('t1-')) {
                         page.querySelector('#posterType').disabled = false
                         page.querySelector('#textless').disabled = false
                         page.querySelector('#backdrops').disabled = true
                         page.querySelector('#posterLang').disabled = true
+                        page.querySelector('#videoQuality').disabled = true
+                        page.querySelector('#colorRange').disabled = true
+                        page.querySelector('#audioChannels').disabled = true
                     } else if (globalKey.startsWith('t2-')) {
                         page.querySelector('#posterType').disabled = false
                         page.querySelector('#textless').disabled = false
                         page.querySelector('#backdrops').disabled = false
                         page.querySelector('#posterLang').disabled = false
+                        page.querySelector('#videoQuality').disabled = true
+                        page.querySelector('#colorRange').disabled = true
+                        page.querySelector('#audioChannels').disabled = true
+                    } else if (globalKey.match(/^t[3-9]\-/)) {
+                        page.querySelector('#posterType').disabled = false
+                        page.querySelector('#textless').disabled = false
+                        page.querySelector('#backdrops').disabled = false
+                        page.querySelector('#posterLang').disabled = false
+                        page.querySelector('#videoQuality').disabled = false
+                        page.querySelector('#colorRange').disabled = false
+                        page.querySelector('#audioChannels').disabled = false
                     }
                     page.querySelectorAll('.rpdbSettings')[0].style.display = 'block'
                     page.querySelectorAll('.load-key')[0].style.display = 'none'
@@ -143,13 +168,15 @@ define(['loading', 'emby-input', 'emby-select', 'emby-checkbox', 'emby-button'],
 
     return function (view, params) {
 
-        view.querySelector('.submit-form').addEventListener('click', onSubmit);  
-
         view.addEventListener('viewshow', function () {
 
             loading.show();
 
             var page = this;
+
+            view.querySelector('.submit-form').addEventListener('click', function(e) {
+                onSubmit(e, page)
+            });  
 
             ApiClient.getNamedConfiguration("rpdb").then(function (response) {
                 loadPage(page, response, function() {
