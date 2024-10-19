@@ -146,7 +146,7 @@ namespace RPDB
                     fallback += posterLang;
                 }
                 var textless = GetRpdbOptions().Textless;
-                if (textless.Equals("1"))
+                if (textless.Equals("1") && !clientKey.StartsWith("t0-"))
                 {
                     posterType = posterType.Replace("poster-", "textless-");
                 }
