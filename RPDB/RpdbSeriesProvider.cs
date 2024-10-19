@@ -140,7 +140,7 @@ namespace RPDB
             {
                 posterType = GetRpdbOptions().PosterType;
                 fallback = "?fallback=true";
-                if (!posterLang.Equals("en"))
+                if (!posterLang.Equals("en") && !clientKey.StartsWith("t0-") && !clientKey.StartsWith("t1-"))
                 {
                     fallback += "&lang=";
                     fallback += posterLang;
