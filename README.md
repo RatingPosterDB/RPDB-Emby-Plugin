@@ -2,6 +2,8 @@
 
 Emby Plugin for [Rating Poster Database](https://ratingposterdb.com/).
 
+**This plugin can be installed from the official Emby Plugins catalog, it is under the "General" category with the "RatingPosterDB" plugin name.**
+
 
 [See Screenshots](https://ratingposterdb.com/#emby)
 
@@ -14,7 +16,7 @@ Currently supports:
 - Badges (Tier 3+)
 
 
-To install manually on Emby Server:
+You can also sideload it manually on your Emby Server:
 
 - [download the plugin](https://github.com/RatingPosterDB/RPDB-Emby-Plugin/releases/download/v1.0.5/RPDB-Emby-Plugin.zip)
 - unpack it
