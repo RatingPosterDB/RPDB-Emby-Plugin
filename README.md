@@ -42,4 +42,6 @@ Result Screenshot:
 
 Settings Screenshot:
 
-![Emby-Plugin-Settings](https://user-images.githubusercontent.com/1777923/124392018-22e16c00-dcfc-11eb-91bb-01a9e57282b3.png)
+![Emby-Plugin-Settings](https://github.com/user-attachments/assets/bf76bdcc-2cda-422d-8083-6a6c0537a45f)
+
+
