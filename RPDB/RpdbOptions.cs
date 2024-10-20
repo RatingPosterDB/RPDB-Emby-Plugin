@@ -16,8 +16,12 @@ namespace RPDB
         public string ThirdRating { get; set; }
         public string FirstBackupRating { get; set; }
         public string SecondBackupRating { get; set; }
+        public string Video3D { get; set; }
         public string VideoQuality { get; set; }
         public string ColorRange { get; set; }
         public string AudioChannels { get; set; }
+        public string VideoCodec { get; set; }
+        public string BadgeSize { get; set; }
+        public string BadgePos { get; set; }
     }
 }

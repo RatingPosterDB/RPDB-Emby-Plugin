@@ -9,13 +9,20 @@
   "LabelPosterLanguage": "Poster Language (Tier 2+)",
   "LabelGetApiKey": "Get API Key",
   "LabelLoadKey": "Load Key",
+  "LabelCustomRatingsDesc": "Only 3 ratings can show at one time on a poster, if one of the first 3 ratings is missing, a backup rating will be used (if available)",
   "LabelFirstRating": "1st Rating",
   "LabelSecondRating": "2nd Rating",
   "LabelThirdRating": "3nd Rating",
   "LabelFirstBackupRating": "1st Backup Rating",
   "LabelSecondBackupRating": "2nd Backup Rating",
   "LabelChangeApiKey": "Change API Key",
-  "LabelVideoQuality": "Video Quality Badge (4K, 1080p, etc) (Tier 3+)",
-  "LabelColorRange": "Color Range Badge (HDR / Dolby Vision) (Tier 3+)",
-  "LabelAudioChannels": "Audio Channels Badge (2.0 / 5.1 / 7.1) (Tier 3+)"
+  "LabelAddBadges": "Add Badges to Posters (4K, HDR, DoVi, etc) (Tier 3+)",
+  "LabelBadgesDesc": "Badges will be added to the poster (based on the selected preferences) up to a maximum of 4 badges per poster (depending on what the video supports)",
+  "LabelBadgeSize": "Badge Size",
+  "LabelBadgePosition": "Badge Position",
+  "LabelVideoQuality": "Video Quality Badge (4K, 1080p, etc)",
+  "Label3dVideo": "3D Badge (if video is 3D)",
+  "LabelColorRange": "Color Range Badge (HDR / Dolby Vision)",
+  "LabelAudioChannels": "Audio Channels Badge (2.0 / 5.1 / 7.1)",
+  "LabelVideoCodecBadge": "Video Codec Badge (h265, h264, etc)"
 }

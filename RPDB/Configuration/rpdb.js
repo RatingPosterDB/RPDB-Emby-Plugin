@@ -45,9 +45,19 @@ define(['loading', 'emby-input', 'emby-select', 'emby-checkbox', 'emby-button'],
 
         }
 
+        page.querySelector('#badgeSize').value = config.BadgeSize || 'normal';
+        page.querySelector('#badgePos').value = config.BadgePos || 'left';
+
         page.querySelector('#videoQuality').checked = !!(config.VideoQuality === '1')
+        page.querySelector('#video3D').checked = !!(config.Video3D === '1')
         page.querySelector('#colorRange').checked = !!(config.ColorRange === '1')
         page.querySelector('#audioChannels').checked = !!(config.AudioChannels === '1')
+        page.querySelector('#videoCodec').checked = !!(config.VideoCodec === '1')
+
+        if ([config.VideoQuality, config.Video3D, config.ColorRange, config.AudioChannels, config.VideoCodec].some(function(el) { return el === '1' })) {
+            page.querySelector('#addBadges').checked = true
+            page.querySelector('#badgesSettings').style.display = 'block'
+        }
 
         loading.hide();
 
@@ -59,7 +69,7 @@ define(['loading', 'emby-input', 'emby-select', 'emby-checkbox', 'emby-button'],
         e.preventDefault();
 
         if (!globalKey)
-            return;
+            return false;
 
         loading.show();
 
@@ -83,9 +93,14 @@ define(['loading', 'emby-input', 'emby-select', 'emby-checkbox', 'emby-button'],
             config.FirstBackupRating = page.querySelector('#firstBackupRating').value;
             config.SecondBackupRating = page.querySelector('#secondBackupRating').value;
 
+            config.BadgeSize = page.querySelector('#badgeSize').value;
+            config.BadgePos = page.querySelector('#badgePos').value;
+
             config.VideoQuality = page.querySelector('#videoQuality:checked') !== null ? '1' : '0'
+            config.Video3D = page.querySelector('#video3D:checked') !== null ? '1' : '0'
             config.ColorRange = page.querySelector('#colorRange:checked') !== null ? '1' : '0'
             config.AudioChannels = page.querySelector('#audioChannels:checked') !== null ? '1' : '0'
+            config.VideoCodec = page.querySelector('#videoCodec:checked') !== null ? '1' : '0'
 
             ApiClient.updateNamedConfiguration("rpdb", config).then(Dashboard.processServerConfigurationUpdateResult);
         });
@@ -109,33 +124,53 @@ define(['loading', 'emby-input', 'emby-select', 'emby-checkbox', 'emby-button'],
                         page.querySelector('#textless').disabled = true
                         page.querySelector('#backdrops').disabled = true
                         page.querySelector('#posterLang').disabled = true
+                        page.querySelector('#addBadges').disabled = true
+                        page.querySelector('#badgeSize').disabled = true
+                        page.querySelector('#badgePos').disabled = true
                         page.querySelector('#videoQuality').disabled = true
+                        page.querySelector('#video3D').disabled = true
                         page.querySelector('#colorRange').disabled = true
                         page.querySelector('#audioChannels').disabled = true
+                        page.querySelector('#videoCodec').disabled = true
                     } else if (globalKey.startsWith('t1-')) {
                         page.querySelector('#posterType').disabled = false
                         page.querySelector('#textless').disabled = false
                         page.querySelector('#backdrops').disabled = true
                         page.querySelector('#posterLang').disabled = true
+                        page.querySelector('#addBadges').disabled = true
+                        page.querySelector('#badgeSize').disabled = true
+                        page.querySelector('#badgePos').disabled = true
                         page.querySelector('#videoQuality').disabled = true
+                        page.querySelector('#video3D').disabled = true
                         page.querySelector('#colorRange').disabled = true
                         page.querySelector('#audioChannels').disabled = true
+                        page.querySelector('#videoCodec').disabled = true
                     } else if (globalKey.startsWith('t2-')) {
                         page.querySelector('#posterType').disabled = false
                         page.querySelector('#textless').disabled = false
                         page.querySelector('#backdrops').disabled = false
                         page.querySelector('#posterLang').disabled = false
+                        page.querySelector('#addBadges').disabled = true
+                        page.querySelector('#badgeSize').disabled = true
+                        page.querySelector('#badgePos').disabled = true
                         page.querySelector('#videoQuality').disabled = true
+                        page.querySelector('#video3D').disabled = true
                         page.querySelector('#colorRange').disabled = true
                         page.querySelector('#audioChannels').disabled = true
+                        page.querySelector('#videoCodec').disabled = true
                     } else if (globalKey.match(/^t[3-9]\-/)) {
                         page.querySelector('#posterType').disabled = false
                         page.querySelector('#textless').disabled = false
                         page.querySelector('#backdrops').disabled = false
                         page.querySelector('#posterLang').disabled = false
+                        page.querySelector('#addBadges').disabled = false
+                        page.querySelector('#badgeSize').disabled = false
+                        page.querySelector('#badgePos').disabled = false
                         page.querySelector('#videoQuality').disabled = false
+                        page.querySelector('#video3D').disabled = false
                         page.querySelector('#colorRange').disabled = false
                         page.querySelector('#audioChannels').disabled = false
+                        page.querySelector('#videoCodec').disabled = false
                     }
                     page.querySelectorAll('.rpdbSettings')[0].style.display = 'block'
                     page.querySelectorAll('.load-key')[0].style.display = 'none'
@@ -200,6 +235,13 @@ define(['loading', 'emby-input', 'emby-select', 'emby-checkbox', 'emby-button'],
                     });
                     view.querySelector('#posterType').onchange = function() {
                         onPosterTypeChanged(page);
+                    };
+                    view.querySelector('#addBadges').onchange = function() {
+                        if (view.querySelector('#addBadges').checked) {
+                            page.querySelector('#badgesSettings').style.display = 'block'
+                        } else {
+                            page.querySelector('#badgesSettings').style.display = 'none'
+                        }
                     };
                 });
             });

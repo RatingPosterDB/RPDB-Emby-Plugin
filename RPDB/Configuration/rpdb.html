@@ -32,6 +32,8 @@
                     </select>
                 </div>
                 <div class="customOrderSettings" style="display: none">
+                    <span>${LabelCustomRatingsDesc}</span>
+                    <br/><br/>
                     <div class="selectContainer">
                         <label for="firstRating">${LabelFirstRating}</label>
                         <select is="emby-select" id="firstRating">
@@ -691,21 +693,58 @@
                 </div>
                 <div>
                     <label class="checkboxContainer">
-                        <input is="emby-checkbox" type="checkbox" id="videoQuality"/>
-                        <span>${LabelVideoQuality}</span>
+                        <input is="emby-checkbox" type="checkbox" id="addBadges"/>
+                        <span>${LabelAddBadges}</span>
                     </label>
                 </div>
-                <div>
-                    <label class="checkboxContainer">
-                        <input is="emby-checkbox" type="checkbox" id="colorRange"/>
-                        <span>${LabelColorRange}</span>
-                    </label>
-                </div>
-                <div>
-                    <label class="checkboxContainer">
-                        <input is="emby-checkbox" type="checkbox" id="audioChannels"/>
-                        <span>${LabelAudioChannels}</span>
-                    </label>
+                <div id="badgesSettings" style="display: none">
+                    <span>${LabelBadgesDesc}</span>
+                    <br/><br/>
+                    <div class="selectContainer">
+                        <label for="badgeSize">${LabelBadgeSize}</label>
+                        <select is="emby-select" id="badgeSize">
+                            <option value="normal" selected>Normal</option>
+                            <option value="small">Small</option>
+                        </select>
+                    </div>
+                    <div class="selectContainer">
+                        <label for="badgePos">${LabelBadgePosition}</label>
+                        <select is="emby-select" id="badgePos">
+                            <option value="left" selected>Top Left</option>
+                            <option value="center">Top Center</option>
+                            <option value="right">Top Right</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="checkboxContainer">
+                            <input is="emby-checkbox" type="checkbox" id="videoQuality"/>
+                            <span>${LabelVideoQuality}</span>
+                        </label>
+                    </div>
+                    <div>
+                        <label class="checkboxContainer">
+                            <input is="emby-checkbox" type="checkbox" id="video3D"/>
+                            <span>${Label3dVideo}</span>
+                        </label>
+                    </div>
+                    <div>
+                        <label class="checkboxContainer">
+                            <input is="emby-checkbox" type="checkbox" id="colorRange"/>
+                            <span>${LabelColorRange}</span>
+                        </label>
+                    </div>
+                    <div>
+                        <label class="checkboxContainer">
+                            <input is="emby-checkbox" type="checkbox" id="audioChannels"/>
+                            <span>${LabelAudioChannels}</span>
+                        </label>
+                    </div>
+                    <div>
+                        <label class="checkboxContainer">
+                            <input is="emby-checkbox" type="checkbox" id="videoCodec"/>
+                            <span>${LabelVideoCodecBadge}</span>
+                        </label>
+                    </div>
                 </div>
                 <div>
                     <button is="emby-button" type="submit" class="raised button-submit block submit-form"><span>${Save}</span></button>
