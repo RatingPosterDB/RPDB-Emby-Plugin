@@ -31,7 +31,7 @@ namespace RPDB
         /// <value>The name.</value>
         public override string Name
         {
-            get { return "Rating Poster Database"; }
+            get { return "RatingPosterDB"; }
         }
 
         /// <summary>
