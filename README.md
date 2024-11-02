@@ -37,6 +37,7 @@ Setting up the plugin:
 - move the RPDB plugin to the top of the "Movie Image Fetchers" list
 - click the "..." for the same library again
 - select "Refresh Metadata"
+- enable "Replace all Images"
 
 Result Screenshot:
 
