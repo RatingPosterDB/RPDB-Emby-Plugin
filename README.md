@@ -18,7 +18,7 @@ Currently supports:
 
 You can also sideload it manually on your Emby Server:
 
-- [download the plugin](https://github.com/RatingPosterDB/RPDB-Emby-Plugin/releases/download/v1.0.5/RPDB-Emby-Plugin.zip)
+- [download the plugin](https://github.com/RatingPosterDB/RPDB-Emby-Plugin/releases/latest/download/RPDB-Emby-Plugin.zip)
 - unpack it
 - copy the files from the "RPDB-Emby-Plugin" folder to Emby's "plugins" folder
 - restart Emby Server
