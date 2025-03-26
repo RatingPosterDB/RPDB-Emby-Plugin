@@ -24,7 +24,7 @@ You can also sideload it manually on your Emby Server:
 - restart Emby Server
 
 
-Setting up the plugin:
+## Setting up the plugin
 
 - go to Settings > Advanced > Plugins
 - click the RPDB plugin to set it up
