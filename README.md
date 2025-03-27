@@ -26,6 +26,7 @@ You can also sideload it manually on your Emby Server:
 
 ## Setting up the plugin
 
+- disable IPv6 support on the device where you run your server (this is important as it can cause very high load times and even fail the image download)
 - go to Settings > Advanced > Plugins
 - click the RPDB plugin to set it up
 - click "Save" to save settings
@@ -35,6 +36,7 @@ You can also sideload it manually on your Emby Server:
 - scroll down to "Movie Image Fetchers" (for series this is "Series Image Fetchers")
 - enable the RPDB plugin from the list
 - move the RPDB plugin to the top of the "Movie Image Fetchers" list
+- optional: some users have mentioned that enabling "Keep a cached copy of images in the server's metadata folder" from the library settings also helped in their case
 - click the "..." for the same library again
 - select "Refresh Metadata"
 - enable "Replace all Images"
