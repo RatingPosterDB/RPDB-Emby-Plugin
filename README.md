@@ -10,10 +10,11 @@ Emby Plugin for [Rating Poster Database](https://ratingposterdb.com/).
 Currently supports:
 - Choosing poster type (Tier 1+): 4 available options
 - Textless posters (Tier 1+)
-- Default Poster Language (Tier 2+)
+- Default Poster Language (Tier 1+)
 - Backdrops (Tier 2+)
-- Custom Rating Order (from 11 rating sources) (Tier 3+)
-- Badges (Tier 3+)
+- Custom Rating Order (from 11 rating sources) (Tier 2+)
+- Badges (Tier 2+)
+- Image Styling (size, bar position, bar color, font color, etc) (Tier 3+)
 
 
 You can also sideload it manually on your Emby Server:
