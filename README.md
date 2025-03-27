@@ -47,6 +47,5 @@ Result Screenshot:
 
 Settings Screenshot:
 
-![Emby-Plugin-Settings](https://github.com/user-attachments/assets/bf76bdcc-2cda-422d-8083-6a6c0537a45f)
-
+![Emby-Plugin-Settings](https://github.com/user-attachments/assets/52cb9fe1-cc70-4f5b-ad47-9a250b3a0500)
 
