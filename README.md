@@ -2,7 +2,7 @@
 
 Emby Plugin for [Rating Poster Database](https://ratingposterdb.com/).
 
-**This plugin can be installed from the official Emby Plugins catalog, it is under the "General" category with the "RatingPosterDB" plugin name.**
+**This plugin can be installed from the official Emby Plugins catalog, it is under the "Metadata" category with the "RatingPosterDB" plugin name.**
 
 
 [See Screenshots](https://ratingposterdb.com/#emby)
