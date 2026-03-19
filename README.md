@@ -8,12 +8,15 @@ Emby Plugin for [Rating Poster Database](https://ratingposterdb.com/).
 [See Screenshots](https://ratingposterdb.com/#emby)
 
 Currently supports:
-- Choosing poster type (Tier 1+): 4 available options
+- Image Rating Themes (Tier 1+)
+- Choose Rating Position (Tier 1+)
 - Textless posters (Tier 1+)
 - Default Poster Language (Tier 1+)
+- Custom Rating Order (from 11 rating sources) (Tier 1+)
 - Backdrops (Tier 2+)
-- Custom Rating Order (from 11 rating sources) (Tier 2+)
+- Logos (Tier 2+)
 - Badges (Tier 2+)
+- Font Size / Weight (Tier 2+)
 - Image Styling (size, bar position, bar color, font color, etc) (Tier 3+)
 
 
@@ -42,11 +45,12 @@ You can also sideload it manually on your Emby Server:
 - select "Refresh Metadata"
 - enable "Replace all Images"
 
-Result Screenshot:
+### Result Screenshot
 
 ![emby-1](https://user-images.githubusercontent.com/1777923/114302550-3d77c080-9ad2-11eb-9699-fd4a5b6adfaf.jpg)
 
-Settings Screenshot:
+### Settings Screenshot
 
-![Emby-Plugin-Settings](https://github.com/user-attachments/assets/52cb9fe1-cc70-4f5b-ad47-9a250b3a0500)
+![Emby-Plugin-Settings](https://github.com/user-attachments/assets/8db0d9c5-038a-4a8d-9777-b6f5c35db2c5)
+
 
